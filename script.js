@@ -63,7 +63,7 @@ function logOut() {
 
 let username = localStorage.getItem("USERNAME");
 console.log(username);
-headUser.innerHTML = `<h3>Welcome ${username}</h3>`;
+headUser.innerHTML = `<h4>Welcome ${username}</h4>`;
 
 
 let total = 0
@@ -113,26 +113,27 @@ function addExpense() {
   const currentUser = JSON.parse(localStorage.getItem("CURRENT-USER"));
 
   if (expenseAdd.expense > total) {
-    alert("Insufficient balance");
+    alert("Not much amount..😪");
   } else {
+    var table = document.getElementById("exp-table");
+
+    // Create an empty <tr> element and add it to the 1st position of the table:
+    var row = table.insertRow(2);
+
+    // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2)
+
+    // Add some text to the new cells:
+    cell1.innerHTML = expenseAdd.description;
+    cell2.innerHTML = expenseAdd.expense;
+
     total -= expenseAdd.expense;
+    cell3.innerHTML = displayBalance()
     alert("Amount taken");
     displayBalance();
   }
-  var table = document.getElementById("exp-table");
-
-            // Create an empty <tr> element and add it to the 1st position of the table:
-            var row = table.insertRow(2);
-
-            // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var cell3 = row.insertCell(2)
-
-            // Add some text to the new cells:
-            cell1.innerHTML = expenseAdd.description;
-            cell2.innerHTML = expenseAdd.expense;
-            cell3.innerHTML = displayBalance()
 }
 
 function displayBalance() {

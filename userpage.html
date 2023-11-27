@@ -7,9 +7,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <style>
+      @keyframes moveFadeLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            50% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+        }
+
+        #headUser {
+            animation: moveFadeLeft 15s ease-in-out infinite;
+        }
+
+        .hidden {
+            display: none;
+        }
+  </style>
+    </head>
 <body style="background-color: #eeedeb;">
-    <nav class="navbar navbar-expand-lg" style="background-color: rgb(42, 67, 165);">
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(161, 149, 19);">
         <div class="container-fluid">
         <img class="rounded ms-5" src="https://play-lh.googleusercontent.com/2VaPA06HyAdBriAyqawivmyifgEVblRge-z5dD8wcJy6K3icNt4PkvA0H2EINHjZTA" height="50px" alt="">
           <a class="navbar-brand ms-2 text-white" href="#"> SpendWise</a>
@@ -32,12 +56,12 @@
               </li>
             </ul>
           </div>
-          <button class="btn btn-outline-danger" onclick="logOut()">Logout</button>
+          <button class="btn btn-danger" onclick="logOut()">Logout</button>
         </div>
       </nav>
 
-      <div class=" text-danger text-center mt-5 mb-5 w-75" style="margin-left: 15%;">
-        <h1 id="headUser">Welcome User</h1>
+      <div class=" text-success text-center mt-5 mb-5 w-75" style="margin-left: 15%;">
+        <div id="headUser">Welcome User</div>
 
             </div>
         </div>
@@ -49,7 +73,7 @@
                 <div class="income-details text-center p-5 h-100 rounded border border-5 border-light shadow" style="background-color: #f0f8ff";>
                     <input id="des1" type="text" class="form-control mb-3" placeholder="Description">
                     <input id="amt1" type="number" class="form-control mb-3" placeholder="Enter Income">
-                    <button class="btn w-100 btn-info" onclick="addIncome()">Add +</button>
+                    <button class="btn w-100 btn-outline-success" onclick="addIncome()">Add +</button>
                 </div>
             </div>
             <div class="col-md-4 w-25 ms-4 py-5">
@@ -64,7 +88,7 @@
                 <div class="income-details text-center p-5 h-100 rounded border border-5 border-light shadow"style="background-color: #f0f8ff">
                     <input id="des2" type="text" class="form-control mb-3" placeholder="Description">
                     <input id="amt2" type="number" class="form-control mb-3" placeholder="Enter Expense">
-                    <button class="btn w-100 btn-info" onclick="addExpense()">Add Expense +</button>
+                    <button class="btn w-100 btn-outline-danger" onclick="addExpense()">Add Expense +</button>
                 </div>
             </div>
         </div>
@@ -73,7 +97,7 @@
       <div class="container">
         <div class="row d-flex justify-content-md-evenly">
             <div class="col-md-6 mt-5 p-5 bg-success">
-                <table id="inc-table" class="table">
+                <table id="inc-table" class="table border border-5 border-success" >
                     <thead>
                         <tr>
                             <th colspan="3" class="text-center">Income</th>
@@ -88,7 +112,7 @@
                 </table>
             </div>
             <div class="col-md-6  mt-5 p-5 bg-warning ">
-                <table id="exp-table" class="table">
+                <table id="exp-table" class="table border border-5 border-warning">
                     <thead>
                         <tr>
                             <th colspan="3" class="text-center">Expense</th>
@@ -106,11 +130,11 @@
         </div>
       </div>
 
-      <footer class="bg-body-tertiary text-center text-lg-start mt-5">
+      <footer class="bg-dark text-center text-lg-start mt-5">
         <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+        <div class="text-center p-3 text-white" style="background-color: rgba(0, 0, 0, 0.05);">
           © 2020 Copyright:
-          <a class="text-body" href="">SpendWise.com</a>
+          <a class="text-white" href="">SpendWise.com</a>
         </div>
         <!-- Copyright -->
       </footer>
