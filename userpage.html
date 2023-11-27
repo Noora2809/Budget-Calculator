@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome User</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body style="background-color: #eeedeb;">
+    <nav class="navbar navbar-expand-lg" style="background-color: rgb(42, 67, 165);">
+        <div class="container-fluid">
+        <img class="rounded ms-5" src="https://play-lh.googleusercontent.com/2VaPA06HyAdBriAyqawivmyifgEVblRge-z5dD8wcJy6K3icNt4PkvA0H2EINHjZTA" height="50px" alt="">
+          <a class="navbar-brand ms-2 text-white" href="#"> SpendWise</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav ">
+              <li class="nav-item">
+                <a class="nav-link active me-4 text-white" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active me-4 text-white" href="#">Expense</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active me-4 text-white" href="#">Income</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active text-white" href="#">History</a>
+              </li>
+            </ul>
+          </div>
+          <button class="btn btn-outline-danger" onclick="logOut()">Logout</button>
+        </div>
+      </nav>
+
+      <div class=" text-danger text-center mt-5 mb-5 w-75" style="margin-left: 15%;">
+        <h1 id="headUser">Welcome User</h1>
+
+            </div>
+        </div>
+      </div>
+
+      <div class="container-fluid" >
+        <div class="row d-flex justify-content-md-evenly">
+            <div class="col-md-4 w-25 ms-4 py-5">
+                <div class="income-details text-center p-5 h-100 rounded border border-5 border-light shadow" style="background-color: #f0f8ff";>
+                    <input id="des1" type="text" class="form-control mb-3" placeholder="Description">
+                    <input id="amt1" type="number" class="form-control mb-3" placeholder="Enter Income">
+                    <button class="btn w-100 btn-info" onclick="addIncome()">Add +</button>
+                </div>
+            </div>
+            <div class="col-md-4 w-25 ms-4 py-5">
+                <div id="result" class="income-details text-center p-5 h-100 w-100 rounded border border-5 border-light shadow" style="background-color: #acd1ac">
+                  <h3 class=" my-5">Your savings is : $0</h3>
+                </div>
+                
+
+
+            </div>
+            <div class="col-md-4 w-25 ms-4 py-5" >
+                <div class="income-details text-center p-5 h-100 rounded border border-5 border-light shadow"style="background-color: #f0f8ff">
+                    <input id="des2" type="text" class="form-control mb-3" placeholder="Description">
+                    <input id="amt2" type="number" class="form-control mb-3" placeholder="Enter Expense">
+                    <button class="btn w-100 btn-info" onclick="addExpense()">Add Expense +</button>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row d-flex justify-content-md-evenly">
+            <div class="col-md-6 mt-5 p-5 bg-success">
+                <table id="inc-table" class="table">
+                    <thead>
+                        <tr>
+                            <th colspan="3" class="text-center">Income</th>
+                        </tr>
+                        <tr>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="col-md-6  mt-5 p-5 bg-warning ">
+                <table id="exp-table" class="table">
+                    <thead>
+                        <tr>
+                            <th colspan="3" class="text-center">Expense</th>
+                        </tr>
+                        <tr>
+                            <th>Type</th>
+                            <th>Amount</th>
+                            <th>Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+
+            </div>
+        </div>
+      </div>
+
+      <footer class="bg-body-tertiary text-center text-lg-start mt-5">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+          © 2020 Copyright:
+          <a class="text-body" href="">SpendWise.com</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+</body>
+<script src="./script.js">
+</script>
+</html>
