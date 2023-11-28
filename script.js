@@ -140,3 +140,5 @@ function displayBalance() {
     result.innerHTML = `<h3 class="my-5 text-success">Your savings is : $${total}</h3>`;
     return `${total}`; // Return the formatted balance as a string
   }
+
+
